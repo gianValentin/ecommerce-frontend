@@ -1,8 +1,7 @@
 import Image from "next/image"
 import Link from "next/link";
 
-export default function Carousel({ products, title }) {
-  console.log(products);
+export default function Carousel({ products, title }) {  
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:pt-8 lg:max-w-7xl lg:px-8">

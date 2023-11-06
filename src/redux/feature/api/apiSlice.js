@@ -4,7 +4,7 @@ import { removeUserSession } from '../user/userSlice'
 import { removeCart } from '../cart/cartSlice'
 
 const baseQuery = fetchBaseQuery({
-    baseUrl: 'http://localhost:8080/api/v1',
+    baseUrl: process.env.API_URL,
     credentials: 'include',
     prepareHeaders: (headers, { getState }) => {
         const access_token = getState().auth.access_token
@@ -52,6 +52,6 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
 export const apiSlice = createApi({
     reducerPath: 'api', //optional
     baseQuery: baseQueryWithReauth,
-    tagTypes: ['Product', 'Auth', 'Cart', 'User','Order','Category'],
+    tagTypes: ['Product', 'Auth', 'Cart', 'User', 'Order', 'Category'],
     endpoints: builder => ({})
 })
