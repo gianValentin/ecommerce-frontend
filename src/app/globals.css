@@ -24,6 +24,10 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+
+    position: relative;
+    padding-bottom: 4em;
+    min-height: 100vh;
 }
 
 @layer base {

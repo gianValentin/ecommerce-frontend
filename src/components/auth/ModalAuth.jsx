@@ -78,8 +78,8 @@ export default function ModalAuth() {
         } catch (err) {
             if (!err?.status) {                
                 setErrMsg('No Server Response');
-            } else if (err.status === 400) {
-                setErrMsg(err.data.errors[0].message);
+            } else if (err.status === 400) {                
+                setErrMsg('Credenciales incorrectas');
             } else if (err.status === 401) {
                 setErrMsg('Unauthorized');
             } else {
