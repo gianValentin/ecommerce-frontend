@@ -13,7 +13,13 @@ const nextConfig = {
                 hostname: 'assets.adidas.com',
                 port: '',
                 pathname: '/images/**'
-            }
+            },
+            {
+                protocol: 'https',
+                hostname: 'placehold.co',
+                port: '',
+                pathname: '/**',
+            },
         ]
     },
     env: {
