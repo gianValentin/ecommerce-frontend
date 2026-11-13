@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeCart, setStatusCart } from '@/redux/feature/cart/cartSlice';
 import { usePathname, useRouter } from 'next/navigation';
 import { logOut, setModalAuthStatus } from '@/redux/feature/auth/authSlice';
-import { ALL_CATEGORIES, LOGOUT, OPEN_LOGIN, OPEN_REGISTER, OPTION_ORDER } from '@/constans/status';
+import { ALL_CATEGORIES, LOGOUT, OPEN_LOGIN, OPEN_REGISTER, OPTION_ORDER, OPTION_PROFILE } from '@/constans/status';
 import { removeUserSession, selectUserSession } from '@/redux/feature/user/userSlice';
 import { useLazyLogoutQuery } from '@/redux/feature/auth/authApiSlice';
 
@@ -20,7 +20,7 @@ const menuItemProfile = [
         { name: 'Registro', option: OPEN_REGISTER }
     ],
     [
-        { name: 'Perfil', option: null },
+        { name: 'Perfil', option: OPTION_PROFILE },
         { name: 'Pedidos', option: OPTION_ORDER },
         { name: 'Cerrar Sesión', option: LOGOUT }
     ]
@@ -61,6 +61,8 @@ function Nav() {
             dispatch(removeCart())
         }else if( option === OPTION_ORDER){
             router.push('/orders')
+        } else if (option === OPTION_PROFILE) {
+            router.push('/profile')
         }
     }
 

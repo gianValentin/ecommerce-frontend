@@ -9,6 +9,7 @@ export const LOGOUT = 'logout'
 
 /* option nav */
 export const OPTION_ORDER = 'order_option'
+export const OPTION_PROFILE = 'profile_option'
 
 /* categories default */
 export const ALL_CATEGORIES = 'all'

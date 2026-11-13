@@ -41,7 +41,7 @@ export default function MiniCart({ }) {
 
   const onButtonCheckoutClick = () => {
     setOpen(false)
-    router.push('/checkout')
+    router.push('/cart')
   }
 
   const listEntries = (entries) => (
@@ -151,12 +151,13 @@ export default function MiniCart({ }) {
                       </div>
                       <p className="mt-0.5 text-sm text-gray-500">Costo de envío y impuestos son calculados en el checkout.</p>
                       <div className="mt-6">
-                        <a                          
+                        <button
+                          type="button"
                           onClick={onButtonCheckoutClick}
-                          className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                          className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                         >
-                          Checkout
-                        </a>
+                          Carro de compras
+                        </button>
                       </div>
                       <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                         <p>

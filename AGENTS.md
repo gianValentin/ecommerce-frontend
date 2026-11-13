@@ -9,5 +9,7 @@
 
 - `npm run dev` — start the development server.
 - `npm run lint` — run `next lint` using the `next/core-web-vitals` ESLint config.
+- `npm test` — run Jest tests; pass a test path to focus a file (for example, `npm test -- src/redux/feature/cart/cartSlice.test.js`).
+- `npm run test:watch` — run Jest in watch mode; `npm run test:coverage` — collect coverage.
 - `npm run build` — production build; `npm start` serves that build.
-- There is no test or typecheck script configured. No dependency lockfile is committed, and `.gitignore` excludes npm/yarn lockfiles.
+- There is no typecheck script configured. No dependency lockfile is committed, and `.gitignore` excludes npm/yarn lockfiles.
