@@ -1,22 +1,9 @@
 "use client";
 import { Dialog, Disclosure, Transition } from '@headlessui/react';
 import { MinusIcon, PlusIcon, XMarkIcon } from '@heroicons/react/24/outline';
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
+import CategoryNavigation from './CategoryNavigation';
 
-const sortOptions = [
-  { name: 'Most Popular', href: '#', current: true },
-  { name: 'Best Rating', href: '#', current: false },
-  { name: 'Newest', href: '#', current: false },
-  { name: 'Price: Low to High', href: '#', current: false },
-  { name: 'Price: High to Low', href: '#', current: false },
-]
-const subCategories = [
-  { name: 'Totes', href: '#' },
-  { name: 'Backpacks', href: '#' },
-  { name: 'Travel Bags', href: '#' },
-  { name: 'Hip Bags', href: '#' },
-  { name: 'Laptop Sleeves', href: '#' },
-]
 const filters = [
   {
     id: 'color',
@@ -28,17 +15,6 @@ const filters = [
       { value: 'brown', label: 'Brown', checked: false },
       { value: 'green', label: 'Green', checked: false },
       { value: 'purple', label: 'Purple', checked: false },
-    ],
-  },
-  {
-    id: 'category',
-    name: 'Category',
-    options: [
-      { value: 'new-arrivals', label: 'New Arrivals', checked: false },
-      { value: 'sale', label: 'Sale', checked: false },
-      { value: 'travel', label: 'Travel', checked: true },
-      { value: 'organization', label: 'Organization', checked: false },
-      { value: 'accessories', label: 'Accessories', checked: false },
     ],
   },
   {
@@ -60,8 +36,6 @@ function classNames(...classes) {
 }
 
 const ProductMobileFilter = ({mobileFiltersOpen, setMobileFiltersOpen}) => {
-
-  /* const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false) */
 
   return (
     <Transition.Root show={mobileFiltersOpen} as={Fragment}>
@@ -103,16 +77,9 @@ const ProductMobileFilter = ({mobileFiltersOpen, setMobileFiltersOpen}) => {
 
               {/* Filters */}
               <form className="mt-4 border-t border-gray-200">
-                <h3 className="sr-only">Categories</h3>
-                <ul role="list" className="px-2 py-3 font-medium text-gray-900">
-                  {subCategories.map((category) => (
-                    <li key={category.name}>
-                      <a href={category.href} className="block px-2 py-3">
-                        {category.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                <div className="py-3">
+                  <CategoryNavigation mobile onCategorySelect={() => setMobileFiltersOpen(false)} />
+                </div>
 
                 {filters.map((section) => (
                   <Disclosure as="div" key={section.id} className="border-t border-gray-200 px-4 py-6">
