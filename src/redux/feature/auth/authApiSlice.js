@@ -17,7 +17,11 @@ export const authApiSlice = apiSlice.injectEndpoints({
             })
         }),
         logout: builder.query({            
-            query: data => `/auth/logout`
+            query: data => ({
+                url: 'auth/logout',
+                method: 'POST',
+                body: { ...data }
+            })
         }),
     })
 })
